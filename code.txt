@@ -1,0 +1,191 @@
+let monthlyHours = 180
+let monthOt = 10
+let monthOt2 = 10
+let rate = 44.48
+let rateOt = rate * 1.5
+let rateOt2 = rate * 2
+let month = 'Desember'
+
+// Sien watse maand did is om te sien hoeveel ure in die maand is.
+if (month === 'September' || 'October' || 'Desember') {
+    let totalMonth = 160
+    // sien of jou ure vol is
+    if (monthlyHours <= 160) {
+        let pay = monthlyHours * rate + monthOt * rateOt + monthOt2 * rateOt2
+        let uif = pay * 1 / 100
+        let prov = pay * 6 / 100
+         if (pay > 6512.5) {
+           let pay2 = (pay - 6512.5) * 18 / 100
+        pay = pay - pay2 - uif - prov
+        }
+        console.log(Math.round(pay * 100) / 100)
+    } //kyk of jy enige 1.d ure het om vol te maak
+    else if (monthlyHours < 160 && monthOt > 0 && monthOt2 === 0) {
+        let def = 160 - monthlyHours
+        // kyk of jy genoeg 1.5 het om vol te maak
+        if (monthOt < def || monthOt === def) {
+            monthlyHours = monthlyHours + monthOt
+            let pay = monthlyHours * rate + monthOt2 * rateOt2
+            let uif = pay * 1 / 100
+            let prov = pay * 6 / 100
+             if (pay > 6512.5) {
+              let pay2 = (pay - 6512.5) * 18 / 100
+           pay = pay - pay2 - uif - prov
+        }
+            console.log(Math.round(pay * 100) / 100)
+        } else if (monthOt > def && monthOt2 === 0) {
+            let pay = (monthlyHours + def) * rate + (monthOt - def) * rateOt + monthOt2 * rateOt2
+            let uif = pay * 1 / 100
+            let prov = pay * 6 / 100
+             if (pay > 6512.5) {
+              let pay2 = (pay - 6512.5) * 18 / 100
+           pay = pay - pay2 - uif - prov
+        }
+            console.log(Math.round(pay * 100) / 100)
+        }
+    } //kyk of jy enige 2.0 het om vol te maak 
+    else if (monthlyHours < 160 && monthOt === 0 && monthOt2 > 0) {
+        let def = 160 - monthlyHours
+        // ky of jy genoeg 2.0 het om vol te maak
+        if (monthOt2 < def || monthOt2 === def) {
+            monthlyHours = monthlyHours + monthOt2
+            let pay = monthlyHours * rate 
+            let uif = pay * 1 / 100
+            let prov = pay * 6 / 100
+             if (pay > 6512.5) {
+              let pay2 = (pay - 6512.5) * 18 / 100
+           pay = pay - pay2 - uif - prov
+        }
+            console.log(Math.round(pay * 100) / 100)
+        } else if (monthOt2 > def && monthOt === 0) {
+            let pay = (monthlyHours + def) * rate + monthOt * rateOt + (monthOt2 - def) * rateOt2
+            let uif = pay * 1 / 100
+            let prov = pay * 6 / 100
+             if (pay > 6512.5) {
+              let pay2 = (pay - 6512.5) * 18 / 100
+           pay = pay - pay2 - uif - prov
+        }
+            console.log(Math.round(pay * 100) / 100)
+        }
+    } // as jy 1.5 en 2.0 het en moet vol maak
+    else if (monthlyHours < 160 && monthOt > 0 && monthOt2 > 0) {
+        let def = 160 - monthlyHours
+        // of daar genoeg 1.5 is 
+        if (def > monthOt + monthOt2 || monthOt + monthOt2 === def) {
+            monthlyHours = monthlyHours + monthOt + monthOt2
+            let pay = monthlyHours * rate
+            let uif = pay * 1 / 100
+            let prov = pay * 6 / 100
+             if (pay > 6512.5) {
+              let pay2 = (pay - 6512.5) * 18 / 100
+           pay = pay - pay2 - uif - prov
+        }
+            console.log(Math.round(pay * 100) / 100)
+        } else if (def > monthOt) {
+            monthlyHours = monthlyHours + monthOt
+            let def2 = 160 - monthlyHours
+            monthOt2 = monthOt2 - def2
+            monthlyHours = monthlyHours + def2
+            let pay = monthlyHours * rate + monthOt2 * rateOt2
+            let uif = pay * 1 / 100
+            let prov = pay * 6 / 100
+             if (pay > 6512.5) {
+              let pay2 = (pay - 6512.5) * 18 / 100
+           pay = pay - pay2 - uif - prov
+        }
+            console.log(Math.round(pay * 100) / 100)
+        }
+    }
+} 
+
+if (month === 'Augustus' || 'November') {
+    let totalMonth = 200
+    // sien of jou ure vol is
+    if (monthlyHours <= 200) {
+        let pay = monthlyHours * rate + monthOt * rateOt + monthOt2 * rateOt2
+        let uif = pay * 1 / 100
+        let prov = pay * 6 / 100
+         if (pay > 6512.5) {
+           let pay2 = (pay - 6512.5) * 18 / 100
+        pay = pay - pay2 - uif - prov
+        }
+        console.log(Math.round(pay * 100) / 100)
+    } //kyk of jy enige 1.d ure het om vol te maak
+    else if (monthlyHours < 200 && monthOt > 0 && monthOt2 === 0) {
+        let def = 200 - monthlyHours
+        // kyk of jy genoeg 1.5 het om vol te maak
+        if (monthOt < def || monthOt === def) {
+            monthlyHours = monthlyHours + monthOt
+            let pay = monthlyHours * rate + monthOt2 * rateOt2
+            let uif = pay * 1 / 100
+            let prov = pay * 6 / 100
+             if (pay > 6512.5) {
+              let pay2 = (pay - 6512.5) * 18 / 100
+           pay = pay - pay2 - uif - prov
+        }
+            console.log(Math.round(pay * 100) / 100)
+        } else if (monthOt > def && monthOt2 === 0) {
+            let pay = (monthlyHours + def) * rate + (monthOt - def) * rateOt + monthOt2 * rateOt2
+            let uif = pay * 1 / 100
+            let prov = pay * 6 / 100
+             if (pay > 6512.5) {
+              let pay2 = (pay - 6512.5) * 18 / 100
+           pay = pay - pay2 - uif - prov
+        }
+            console.log(Math.round(pay * 100) / 100)
+        }
+    } //kyk of jy enige 2.0 het om vol te maak 
+    else if (monthlyHours < 200 && monthOt === 0 && monthOt2 > 0) {
+        let def = 200 - monthlyHours
+        // ky of jy genoeg 2.0 het om vol te maak
+        if (monthOt2 < def || monthOt2 === def) {
+            monthlyHours = monthlyHours + monthOt2
+            let pay = monthlyHours * rate 
+            let uif = pay * 1 / 100
+            let prov = pay * 6 / 100
+             if (pay > 6512.5) {
+              let pay2 = (pay - 6512.5) * 18 / 100
+           pay = pay - pay2 - uif - prov
+        }
+            console.log(Math.round(pay * 100) / 100)
+        } else if (monthOt2 > def && monthOt === 0) {
+            let pay = (monthlyHours + def) * rate + monthOt * rateOt + (monthOt2 - def) * rateOt2
+            let uif = pay * 1 / 100
+            let prov = pay * 6 / 100
+             if (pay > 6512.5) {
+              let pay2 = (pay - 6512.5) * 18 / 100
+           pay = pay - pay2 - uif - prov
+        }
+            console.log(Math.round(pay * 100) / 100)
+        }
+    } // as jy 1.5 en 2.0 het en moet vol maak
+    else if (monthlyHours < 200 && monthOt > 0 && monthOt2 > 0) {
+        let def = 200 - monthlyHours
+        // of daar genoeg 1.5 is 
+        if (def > monthOt + monthOt2 || monthOt + monthOt2 === def) {
+            monthlyHours = monthlyHours + monthOt + monthOt2
+            let pay = monthlyHours * rate
+            let uif = pay * 1 / 100
+            let prov = pay * 6 / 100
+             if (pay > 6512.5) {
+              let pay2 = (pay - 6512.5) * 18 / 100
+           pay = pay - pay2 - uif - prov
+        }
+            console.log(Math.round(pay * 100) / 100)
+        } else if (def > monthOt) {
+            monthlyHours = monthlyHours + monthOt
+            let def2 = 200 - monthlyHours
+            monthOt2 = monthOt2 - def2
+            monthlyHours = monthlyHours + def2
+            let pay = monthlyHours * rate + monthOt2 * rateOt2
+            let uif = pay * 1 / 100
+            let prov = pay * 6 / 100
+             if (pay > 6512.5) {
+              let pay2 = (pay - 6512.5) * 18 / 100
+           pay = pay - pay2 - uif - prov
+        }
+            console.log(Math.round(pay * 100) / 100)
+        }
+    }
+} 
+
